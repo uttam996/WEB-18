@@ -1,0 +1,84 @@
+<!DOCTYPE html>
+<html>
+  <style>
+    h1{
+       text-align: center;
+    }
+    #box {
+      margin: auto;
+      width: 40%;
+      margin-top: 40px;
+      background-image: linear-gradient(skyblue, white);
+    }
+    input,
+    select {
+      width: 100%;
+      padding: 12px 20px;
+      margin: 8px 0;
+      display: inline-block;
+      border: 1px solid #ccc;
+      border-radius: 4px;
+      box-sizing: border-box;
+    }
+
+    button {
+      width: 100%;
+      background-color: skyblue;
+      color: white;
+      padding: 14px 20px;
+      margin: 8px 0;
+      border: none;
+      border-radius: 4px;
+      cursor: pointer;
+    }
+   
+
+    button:hover {
+      background-color: rgb(37, 185, 243);
+    }
+
+    div {
+      border-radius: 5px;
+      background-color: #f2f2f2;
+      padding: 20px;
+    }
+  </style>
+  <body>
+      <h1>SIGN UP</h1>
+    <div id="box">
+      <form id="form">
+        <label for="email">Email</label>
+        <input type="email" id="email" placeholder="Enter your email" />
+
+        <label for="pass">password</label>
+        <input type="password" id="pass" placeholder="password" />
+
+        <button id="btn">Sign</button>
+        <a href="login.html"> <button id="btn2">Login</button></a>
+      </form>
+    </div>
+  </body>
+</html>
+<script>
+  var data =JSON.parse(localStorage.getItem("login"))||[]
+
+
+  
+  document.querySelector("#btn").addEventListener("click",signuo)
+  function signuo(form){
+    var form =document.querySelector("form")
+      event.preventDefault()
+      var obj={
+          email:form.email.value,
+          password:form.pass.value
+      }
+      data.push(obj)
+    localStorage.setItem("login",JSON.stringify(data))
+    window.location.href="login.html"
+
+    //  data.push(obj)
+    //  localStorage.setItem("login",JSON.stringify(data))
+    //  alert("sign up succesful")
+}
+
+</script>

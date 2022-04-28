@@ -1,0 +1,42 @@
+.cont{
+    display: grid;
+    grid-template-columns: repeat(4,1fr);
+  
+    gap: 20px;
+    font-family:Verdana, Geneva, Tahoma, sans-serif;
+ }
+ .cont>div{
+  display: flex;
+  flex-direction:column;
+  box-shadow: rgba(0, 0, 0, 0.24) 0px 3px 8px;
+  
+
+ }
+ .cont>div>h5{
+ color: gray;
+ margin: 0px 10px;
+ }
+ .cont>div>div{
+ display: flex;
+ box-shadow: rgba(17, 12, 46, 0.15) 0px 48px 100px 0px;
+
+ margin: 0px 0px;
+ }
+ .cont>div>div>p{
+  margin-left: 10px;
+ }
+ .cont>div>div>p:nth-child(1){
+ 
+  color:green;
+ }
+ .cont>div>div>p:nth-child(2){
+  font-size: 14px;
+  text-decoration: line-through;
+  color: gray;
+ }
+ button{
+     background-color: orange;
+     margin: 0px 10px;
+     border: 1px solid gray;
+     margin-bottom: 10px;
+ }

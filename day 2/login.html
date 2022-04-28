@@ -1,0 +1,86 @@
+<!DOCTYPE html>
+<html>
+  <style>
+     h1{
+       text-align: center;
+    }
+    #box {
+      margin: auto;
+      width: 40%;
+      margin-top: 40px;
+      background-image: linear-gradient(skyblue, white);
+    }
+    input,
+    select {
+      width: 100%;
+      padding: 12px 20px;
+      margin: 8px 0;
+      display: inline-block;
+      border: 1px solid #ccc;
+      border-radius: 4px;
+      box-sizing: border-box;
+    }
+
+    button {
+      width: 100%;
+      background-color: skyblue;
+      color: white;
+      padding: 14px 20px;
+      margin: 8px 0;
+      border: none;
+      border-radius: 4px;
+      cursor: pointer;
+    }
+
+    button:hover {
+      background-color: rgb(37, 185, 243);
+    }
+
+    div {
+      border-radius: 5px;
+      background-color: #f2f2f2;
+      padding: 20px;
+    }
+  </style>
+  <body>
+    <h1>LOGIN UP</h1>
+    <div id="box">
+      <form id="form">
+        <label for="e-mail">Email</label>
+        <input type="email" id="email" placeholder="Enter your email" />
+
+        <label for="pass">password</label>
+        <input type="password" id="pass" placeholder="password" />
+
+        <button id="btn">Login</button>
+        <button id="btn2"><a href="sign.html">Sign</a></button>
+      </form>
+    </div>
+  </body>
+</html>
+<script>
+  var login = JSON.parse(localStorage.getItem("login"))||[];
+  console.log(login);
+
+ 
+  document.querySelector("#btn").addEventListener("click", passcheck);
+  function passcheck(data) {
+    var form = document.querySelector("form");
+    event.preventDefault();
+    var flag =false;
+    login.forEach(function (element) {
+      if (
+        element.email == form.email.value &&
+        element.password == form.pass.value
+      ){
+        flag=true;
+  
+      }
+    })
+    if (flag){
+      alert("LOgin Succesful")
+    }else{
+      alert("wrong password")
+    }
+  }
+</script>

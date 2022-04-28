@@ -1,0 +1,77 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+    <style>
+        body>div:nth-child(1){
+        
+            text-align: center;
+            font-family: Verdana, Geneva, Tahoma, sans-serif;
+        }
+      .container {
+        
+       width: 80%;
+      margin: auto;
+        margin-top: 5%;
+        display: grid;
+        grid-template-columns: repeat(4,1fr);
+        gap: 20px;
+      }
+      .container>div {
+          font-family:'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;
+      text-align: center;
+    border-radius: 3px;
+    }
+      .container>div>img {
+      width:100%;
+    }
+    </style>
+  </head>
+  <body>
+      <div>
+          <h1>Stratagic Invester</h1>
+      </div>
+    <div class="container"></div>
+  </body>
+  <script>
+    var data = JSON.parse(localStorage.getItem("invester"))||[]
+    var con =document.querySelector(".container")
+    data.forEach(function(el){
+        var parent=document.createElement("div")
+        
+        parent.style.boxShadow="rgba(0, 0, 0, 0.16) 0px 1px 4px"
+        parent.style.borderRadius="10px"
+
+        var image = document.createElement("img")
+        image.setAttribute("src",el.image)
+        image.style.borderRadius="10px 10px 0px 0px"
+
+        var logo = document.createElement("img")
+        logo.setAttribute("src",el.logo)
+        logo.style.marginTop = "-15px"
+
+        
+
+        var name=document.createElement("h3")
+        name.innerText=el.name;
+        name.style.color="gray"
+        
+
+        var status=document.createElement("p")
+        status.innerText= el.status;
+        status.style.fontWeight = "400"
+        status.style.color = "gray"
+        status.style.marginTop = "-15px"
+        
+
+       
+        parent.append(image,name,status,logo)
+        con.append(parent)
+        
+      
+    })
+  </script>
+</html>

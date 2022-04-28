@@ -1,0 +1,19 @@
+.con{
+    display: flex;
+    background-image: linear-gradient(#ffafbd  ,#ffc3a0);
+    justify-content: space-around;
+}
+.con>div{
+    padding: 20px;
+    color: gray;
+    font-size: 20px;
+    text-decoration: none;
+   
+}
+.con>div a{
+    padding: 20px;
+    color: gray;
+    font-size: 20px;
+    text-decoration: none;
+   
+}
